@@ -61,7 +61,7 @@ function Shortener() {
     <div className="min-h-screen bg-gray-800 flex items-start pt-20 justify-center">
       <div className="bg-gray-700 p-8 rounded-xl shadow-2xl w-full max-w-lg">
         <h1 className="text-4xl font-bold text-white mb-8 flex items-center">
-          Serverless URL Shortener
+          Serverless URL Mapper
           <span className="ml-3 text-blue-400">🔗</span>
         </h1>
 
