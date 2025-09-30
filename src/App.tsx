@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-// IMPORTANT: Replace this with your actual API Gateway URL
 const API_BASE_URL =
-  "https://bul2u9q6ld.execute-api.ap-south-1.amazonaws.com/default/{proxy+}";
+  "https://bul2u9q6ld.execute-api.ap-south-1.amazonaws.com/default/";
 
 function Shortener() {
   const [longUrl, setLongUrl] = useState("");
@@ -27,7 +26,6 @@ function Shortener() {
       });
 
       if (!response.ok) {
-        // Log the full response text if available for better debugging
         const errorText = await response.text();
         console.error("API Response Error:", errorText);
         throw new Error(`API error: ${response.status} ${response.statusText}`);
@@ -60,17 +58,13 @@ function Shortener() {
   };
 
   return (
-    // Outer container for the full screen (matching your dark theme)
     <div className="min-h-screen bg-gray-800 flex items-start pt-20 justify-center">
-      {/* Card container with shadow */}
       <div className="bg-gray-700 p-8 rounded-xl shadow-2xl w-full max-w-lg">
-        {/* Title */}
         <h1 className="text-4xl font-bold text-white mb-8 flex items-center">
           Serverless URL Shortener
           <span className="ml-3 text-blue-400">🔗</span>
         </h1>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="url"
@@ -96,14 +90,12 @@ function Shortener() {
           </button>
         </form>
 
-        {/* Error Message Area */}
         {error && (
           <p className="text-red-400 mt-4 p-3 bg-gray-600 rounded-lg border-l-4 border-red-500">
             Error: {error}
           </p>
         )}
 
-        {/* Short URL Result Area */}
         {shortUrl && (
           <div className="mt-6 p-4 bg-gray-600 rounded-lg">
             <p className="text-gray-300 text-sm mb-2 font-medium">
