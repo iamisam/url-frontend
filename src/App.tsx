@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // IMPORTANT: Replace this with your actual API Gateway URL
 const API_BASE_URL =
-  "https://bul2u9q6ld.execute-api.ap-south-1.amazonaws.com/default";
+  "https://bul2u9q6ld.execute-api.ap-south-1.amazonaws.com/default/{proxy+}";
 
 function Shortener() {
   const [longUrl, setLongUrl] = useState("");
