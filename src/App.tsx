@@ -86,7 +86,7 @@ function Shortener() {
               }
             `}
           >
-            {isLoading ? "Mapping..." : "Mapped URL"}
+            {isLoading ? "Mapping..." : "Map URL"}
           </button>
         </form>
 
