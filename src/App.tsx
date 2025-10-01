@@ -36,7 +36,7 @@ function Shortener() {
       setLongUrl("");
     } catch (err) {
       console.error(err);
-      setError("Failed to shorten URL. Check the URL and API status.");
+      setError("Failed to map URL. Check the URL and API status.");
     } finally {
       setIsLoading(false);
     }
@@ -70,7 +70,7 @@ function Shortener() {
             type="url"
             value={longUrl}
             onChange={(e) => setLongUrl(e.target.value)}
-            placeholder="Enter the long URL (e.g., https://example.com)"
+            placeholder="Enter any URL (e.g., https://example.com)"
             required
             className="p-3 text-lg border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-gray-600 text-white placeholder-gray-400"
           />
@@ -86,7 +86,7 @@ function Shortener() {
               }
             `}
           >
-            {isLoading ? "Shortening..." : "Shorten URL"}
+            {isLoading ? "Mapping..." : "Mapped URL"}
           </button>
         </form>
 
@@ -99,7 +99,7 @@ function Shortener() {
         {shortUrl && (
           <div className="mt-6 p-4 bg-gray-600 rounded-lg">
             <p className="text-gray-300 text-sm mb-2 font-medium">
-              Your Short URL:
+              Your Mapped URL:
             </p>
             <div className="flex items-center gap-2">
               <span className="flex-grow p-2 text-blue-300 bg-gray-700 rounded-md truncate font-mono">
